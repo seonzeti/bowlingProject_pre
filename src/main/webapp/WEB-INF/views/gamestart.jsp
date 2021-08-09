@@ -1,6 +1,7 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -207,6 +208,10 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 
 </head>
 <body class="no-sidebar is-preload">
+
+
+
+
 	<div id="page-wrapper">
 
 		<!-- Header -->
@@ -279,14 +284,13 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 							<button type="button" class="btn btn-secondary">9</button>
 							<button type="button" class="btn btn-secondary">10</button>
 
-							<!-- ScoreBoard판 -->
-							<div class="scoreBoard" style="max-width: 100%;">
-								<div class = "btncontainer">1</div>
-							</div>
+							
 
 						</div>
 						
 					</div>
+					
+					
 
 
 					
