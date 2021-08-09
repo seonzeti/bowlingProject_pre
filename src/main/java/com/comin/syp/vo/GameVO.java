@@ -15,7 +15,7 @@ public class GameVO {
 	
 	private Date game_date; 	//게임 날짜 
 	
-	private String pinStatus; //핀상태
+	private int pinStatus; //핀상태
 	
 	private int frame = 1; // 현재 프레임
 	private int turn = 1; // 현재 투구
@@ -71,11 +71,11 @@ public class GameVO {
 		this.game_date = game_date;
 	}
 
-	public String getPinStatus() {
+	public int getPinStatus() {
 		return pinStatus;
 	}
 
-	public void setPinStatus(String pinStatus) {
+	public void setPinStatus(int pinStatus) {
 		this.pinStatus = pinStatus;
 	}
 

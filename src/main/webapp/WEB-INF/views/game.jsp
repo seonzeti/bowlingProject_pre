@@ -249,7 +249,9 @@
 							<h3 align="left">Score Board</h3>
 							<p align="left">플레이어 수를 선택하고 게임 시작 버튼을 눌러주세요. (최대 5인)</p>
 							
-							<form name="playerNumForm" action = "" method = "post">
+							
+							<!-- 이부분 option값을 어떻게 정상적으로 보낼 수 있을지 연구해보기.. -->
+							<!-- <form name="playerNumForm" action = "" method = ""> -->
 								<select class="form-select" id="playerNum" style="width: 100%">
 									<option>1</option>
 									<option>2</option>
@@ -257,9 +259,9 @@
 									<option>4</option>
 									<option>5</option>
 								</select> <br>
-								<input type="button" class="btn-danger" onclick="location.href='./gamestart'" style = "width: 100%" value = "Game Start">
-							</form>
-							
+								<input type="submit" class="btn btn-danger" onclick="location.href='./gamestart'" style = "width: 100%" value = "Game Start">
+							<!-- </form>
+							 -->
 							
 	
 						</div>				
