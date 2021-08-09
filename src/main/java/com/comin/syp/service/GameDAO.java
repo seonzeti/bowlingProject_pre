@@ -5,42 +5,51 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.comin.syp.vo.GameVO;
 
 
-public class GameDAO {
 
+@Repository
+public class GameDAO implements GameService {
+	@Autowired private SqlSession sql;
 	// DAO (Data Access Object) DB를 사용해 데이터를 조회하거나 조작하는 기능
 	// 사용자는 자신이 필요한 Interface를 DAO에게 던지고, DAO는 이 인터페이스를 구현한 객체를 사용자에게 편리하게 사용할 수 있도록
 	// 반환해준다.
 
-	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		String url = "jdbc:mariadb://localhost:3308/mysql";
-		String sql = "SELECT * FROM bowling.yp_game";
 
-		// 클래스를 객체화, 드라이버를 로드
-		Class.forName("org.mariadb.jdbc.Driver");
-		// 실행 도구 생성
-		Connection con = DriverManager.getConnection(url, "root", "5741");
-		// 연결 객체를 얻음
-		Statement st = con.createStatement();
-		// 쿼리를 실행하여 결과 집합을 얻어온다.
-		ResultSet rs = st.executeQuery(sql);
 
-		if (rs.next()) { // 다음 값을 가져옴 Bof ~ Eof
-			String ex1 = rs.getString(1);
-			String ex2 = rs.getString(2);
-			String ex3 = rs.getString(3);
-			String ex4 = rs.getString(4);
-			
-			System.out.println(ex1);
-			System.out.println(ex2);
-			System.out.println(ex3);
-			System.out.println(ex4);
-		}
-
-		rs.close();
-		st.close();
-		con.close();
+	@Override
+	public List<GameVO> gameList() {
+		return sql.selectList("gameInfo.mapper.list");
 	}
+
+	@Override
+	public int gameInsert(GameVO vo) {
+		sql.insert("gameInfo.mapper.insert", vo);
+		return vo.getGseq();
+	}
+
+	@Override
+	public GameVO gameInfo(int gseq) {
+		return sql.selectOne("gameInfo.mapper.info", gseq);
+	}
+
+	@Override
+	public void gameUpdate(GameVO vo) {
+		sql.update("gameInfo.mapper.update", vo);
+	}
+
+	@Override
+	public int gameReset(int gseq) {
+		sql.update("gameInfo.mapper.reset", gseq);
+		return sql.update("player.mapper.reset", gseq);
+	}
+
 
 }
