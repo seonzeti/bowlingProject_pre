@@ -22,8 +22,7 @@ public class GameDAO implements GameService {
 	// 사용자는 자신이 필요한 Interface를 DAO에게 던지고, DAO는 이 인터페이스를 구현한 객체를 사용자에게 편리하게 사용할 수 있도록
 	// 반환해준다.
 
-
-
+	
 	@Override
 	public List<GameVO> gameList() {
 		return sql.selectList("gameInfo.mapper.list");
