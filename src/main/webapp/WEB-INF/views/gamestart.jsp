@@ -21,6 +21,15 @@
 	margin-bottom: 35px;
 }
 
+.btnContainer {
+	width: 271px !important;
+	margin: 0 auto !important;
+}
+
+.btnContainer a {
+	cursor: pointer !important;
+}
+
 .scoreBoardContainer {
 	width: 730px !important;
 	border: 1px solid #ddd !important;
@@ -239,12 +248,57 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 					align="left">
 					<div class="card-body">
 						<h3>Score Board</h3>
+						<p>각 프레임의 점수를 입력하거나, 원하는 게임세팅을 선택해주세요.</p>
 						
 						
-					
+						
+						
+
 					</div>
 
+					<div class="btn-toolbar" role="toolbar"
+						aria-label="Toolbar with button groups">
+						<div class="btn-group me-2" role="group" aria-label="First group" style="max-width: 100%;" align="center">
+						
+						
+							<button type="button" class="btn btn-warning">Perfect Game</button>
+							<button type="button" class="btn btn-warning">AllSpare Game</button>
+							<button type="button" class="btn btn-warning">Gutter Game</button>
+							<button type="button" class="btn btn-warning">Random Game</button>
+							<br>
+							
+						
+							<button type="button" class="btn btn-secondary">1</button>
+							<button type="button" class="btn btn-secondary">2</button>
+							<button type="button" class="btn btn-secondary">3</button>
+							<button type="button" class="btn btn-secondary">4</button>
+							<button type="button" class="btn btn-secondary">5</button>
+							<button type="button" class="btn btn-secondary">6</button>
+							<button type="button" class="btn btn-secondary">7</button>
+							<button type="button" class="btn btn-secondary">8</button>
+							<button type="button" class="btn btn-secondary">9</button>
+							<button type="button" class="btn btn-secondary">10</button>
+
+							<!-- ScoreBoard판 -->
+							<div class="scoreBoard" style="max-width: 100%;">
+								<div class = "btncontainer">1</div>
+							</div>
+
+						</div>
+						
+					</div>
+
+
+					
+
+
+
+
 				</div>
+
+				
+
+
 			</div>
 
 
