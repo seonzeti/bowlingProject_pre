@@ -251,16 +251,20 @@
 							
 							
 							<!-- 이부분 option값을 어떻게 정상적으로 보낼 수 있을지 연구해보기.. -->
-							<!-- <form name="playerNumForm" action = "" method = ""> -->
+							
+							<form action = "newGame" method="post" id="newameForm">
+							</form>
+							
 								<select class="form-select" id="playerNum" style="width: 100%">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+									<option selected = "selected" value ="0"></option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
 								</select> <br>
 								<input type="submit" class="btn btn-danger" onclick="location.href='./gamestart'" style = "width: 100%" value = "Game Start">
-							<!-- </form>
+						
 							 -->
 							
 	
