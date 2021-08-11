@@ -1,6 +1,8 @@
-	
-	<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 		pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
 	<!DOCTYPE HTML>
 	
 	<html>
@@ -11,9 +13,7 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="./resources/assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="./resources/assets/css/noscript.css" />
-	</noscript>
+	
 	<style>
 	.container {
 		width: 1200px !important;
@@ -252,17 +252,21 @@
 							
 							<!-- 이부분 option값을 어떻게 정상적으로 보낼 수 있을지 연구해보기.. -->
 							
-							
-								<select class="form-select" id="playerNum" style="width: 100%" onchange="selectPlayer()">
+							<form action = "./gamestart" method = "post">							
+								<select class="form-select" id="playerNum" style="width: 100%">
 									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
 									<option value="4">4</option>
 									<option value="5">5</option>
 								</select> <br>
-								<input type="submit" class="btn btn-danger" onclick="location.href='./gamestart'" style = "width: 100%" value = "Game Start">
-						
+								<input type="submit" class="btn btn-danger" style = "width: 100%" value = "Game Start">
+							</form>						
 							
+							
+							
+								
+						
 	
 						</div>				
 						
@@ -319,11 +323,16 @@
 	
 				</div>
 			</div>
-	
-	
-	
-	
-			<!-- Scripts -->
+
+
+			<script>
+				
+			</script>
+
+
+
+
+		<!-- Scripts -->
 			<script src="./resources/assets/js/jquery.min.js"></script>
 			<script src="./resources/assets/js/jquery.dropotron.min.js"></script>
 			<script src="./resources/assets/js/jquery.scrolly.min.js"></script>

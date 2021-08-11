@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,10 +87,9 @@ public class HomeController {
 		return "game";
 	}
 	
-	@RequestMapping(value = "/gamestart", method = RequestMethod.GET)
-	public String start(Locale locale, Model model) {
+	@RequestMapping(value = "/gamestart", method = RequestMethod.POST)
+	public String start(Locale locale, Model model, HttpServletRequest request) {
 		logger.info("gamestart", locale);
-
 		return "gamestart";
 	}
 

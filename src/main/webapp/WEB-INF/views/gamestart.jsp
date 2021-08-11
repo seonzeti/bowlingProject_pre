@@ -13,6 +13,9 @@
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="./resources/assets/css/main.css" type="text/css" />
 
+	
+	
+
 
 
 <style>
@@ -25,10 +28,7 @@ table.scoresheet tr td:not(:last-child) {border-right:1px solid;}
 table.scoresheet tr:nth-child(2) td:nth-child(even) {border-bottom:1px solid;}
 table.scoresheet tr:nth-child(2) td:last-child {border-bottom:1px solid;}
 
-.btn {
- font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
- font-weight: 700
-}
+
 
 .btn-secondary, .btn-warning {
  color: #fff
@@ -196,11 +196,12 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 		<div class="wrapper style1">
 
 			<!-- 요안에 -->
+			
+			
 
 
 			<div class="container" align="center">
-				<div class="card bg-secondary mb-3" style="max-width: 60rem;"
-					align="left">
+				<div class="card bg-secondary mb-3" style="max-width: 60rem;" align="left">
 					<div class="card-body">
 						<h3>Score Board</h3>
 						<p>각 프레임의 점수를 입력하거나, 원하는 게임세팅을 선택해주세요.</p>
@@ -252,13 +253,11 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 									data-toggle="tooltip" data-placement="bottom"
 									title="10 pins knocked down" onclick="hS(10);" value="10"
 									style="display: inline;" >10</button>
-								<button id="btn033" type="button"
-									class="btn-btn-default pull-right" data-toggle="tooltip"
-									data-placement="bottom" title="Click to create another game"
-									onclick="m64tew('010C23GF011EO23875755504948');" value="start" 	style="display: inline;">Start
-									Another Game »</button>
+								
 							</div>
 							<br>
+							
+							<!-- Frame 판 -->
 								<div id='scoresheet' style="max-width: 100%;">
 								<table id='scoresheetTable' class='scoresheet' cellpadding='1'>
 									<tr >
@@ -274,48 +273,48 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 										<th colspan='6'>Frame 10</th>
 									</tr>
 									<tr>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='3'></td>
-										<td colspan='2'></td>
-										<td colspan='2'></td>
-										<td colspan='2'></td>
+										<td colspan='3'> <!-- 1-1 --> </td>
+										<td colspan='3'> <!-- 1-2 --></td>
+										<td colspan='3'> <!-- 2-1 --></td>
+										<td colspan='3'><!-- 2-2 --></td>
+										<td colspan='3'><!-- 3-1 --></td>
+										<td colspan='3'><!-- 3-2 --></td>
+										<td colspan='3'><!-- 4-1 --></td>
+										<td colspan='3'><!-- 4-2 --></td>
+										<td colspan='3'><!-- 5-1 --></td>
+										<td colspan='3'><!-- 5-2 --></td>
+										<td colspan='3'><!-- 6-1 --></td>
+										<td colspan='3'><!-- 6-2 --></td>
+										<td colspan='3'><!-- 7-1 --></td>
+										<td colspan='3'><!-- 7-2 --></td>
+										<td colspan='3'><!-- 8-1 --></td>
+										<td colspan='3'><!-- 8-2 --></td>
+										<td colspan='3'><!-- 9-1 --></td>
+										<td colspan='3'><!-- 9-2 --></td>
+										<td colspan='2'><!-- 10-1 --></td>
+										<td colspan='2'><!-- 10-2 --></td>
+										<td colspan='2'><!-- 10-3 --></td>
 									</tr>
 									<tr>
-										<td colspan='6'></td>
-										<td colspan='6'></td>
-										<td colspan='6'></td>
-										<td colspan='6'></td>
-										<td colspan='6'></td>
-										<td colspan='6'></td>
-										<td colspan='6'></td>
-										<td colspan='6'></td>
-										<td colspan='6'></td>
-										<td colspan='6'></td>
+										<td colspan='6'><!-- 1 Frame Score -->  </td>
+										<td colspan='6'><!-- 2 Frame Score --></td>
+										<td colspan='6'><!-- 3 Frame Score --></td>
+										<td colspan='6'><!-- 4 Frame Score --></td>
+										<td colspan='6'><!-- 5 Frame Score --></td>
+										<td colspan='6'><!-- 6 Frame Score --></td>
+										<td colspan='6'><!-- 7 Frame Score --></td>
+										<td colspan='6'><!-- 8 Frame Score --></td>
+										<td colspan='6'><!-- 9 Frame Score --></td>
+										<td colspan='6'><!-- 10 Frame Score --></td>
 									</tr>
 								</table>
 							</div>
 							
+							<!-- // Frame 판 -->
+							
 
 
 
-
-						<!--  - -->
 
 
 
@@ -379,6 +378,10 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 	</div>
 
 	<!-- Scripts -->
+	<script>
+	</script>
+
+	
 	
 	
 	<script src="./resources/assets/js/jquery.min.js"></script>

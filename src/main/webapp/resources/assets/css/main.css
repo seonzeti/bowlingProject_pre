@@ -7,7 +7,10 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-table.scoresheet {margin: 0 auto; width:80%; font-size:12px; border:1px solid; text-align: center; table-layout: fixed; margin-bottom: 40px;}
+
+
+
+table.scoresheet {margin: 0 auto; width:100%; font-size:12px; border:1px solid; text-align: center; table-layout: fixed; margin-bottom: 40px;}
 table.scoresheet th, tr, td {padding: 0; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-weight: bold;}
 table.scoresheet th {border-bottom:1px solid; background-color: rgb(0, 95, 136); height:30px;}
 table.scoresheet th:not(:last-child) {border-right:1px solid;}
@@ -19,6 +22,8 @@ table.scoresheet tr:nth-child(2) td:last-child {border-bottom:1px solid;}
 body {
   background-color: rgb(88, 158, 148);
 }
+
+
 
 
 html, body, div, span, applet, object,
