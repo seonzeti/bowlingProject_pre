@@ -252,11 +252,8 @@
 							
 							<!-- 이부분 option값을 어떻게 정상적으로 보낼 수 있을지 연구해보기.. -->
 							
-							<form action = "newGame" method="post" id="newameForm">
-							</form>
 							
-								<select class="form-select" id="playerNum" style="width: 100%">
-									<option selected = "selected" value ="0"></option>
+								<select class="form-select" id="playerNum" style="width: 100%" onchange="selectPlayer()">
 									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -265,7 +262,6 @@
 								</select> <br>
 								<input type="submit" class="btn btn-danger" onclick="location.href='./gamestart'" style = "width: 100%" value = "Game Start">
 						
-							 -->
 							
 	
 						</div>				
@@ -324,6 +320,9 @@
 				</div>
 			</div>
 	
+	
+	
+	
 			<!-- Scripts -->
 			<script src="./resources/assets/js/jquery.min.js"></script>
 			<script src="./resources/assets/js/jquery.dropotron.min.js"></script>
@@ -333,5 +332,7 @@
 			<script src="./resources/assets/js/breakpoints.min.js"></script>
 			<script src="./resources/assets/js/util.js"></script>
 			<script src="./resources/assets/js/main.js"></script>
+			
+			
 	</body>
 	</html>

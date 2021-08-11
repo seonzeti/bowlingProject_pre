@@ -11,12 +11,9 @@
 
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
-<link rel="stylesheet" href="./resources/assets/css/main.css"
-	type="text/css" />
+<link rel="stylesheet" href="./resources/assets/css/main.css" type="text/css" />
 
-<script src="./resources/assets/js/game.js"></script>
-<script src="./resources/assets/js/frame.js"></script>
-<script src="./resources/assets/lib/jQuery.js"></script>
+
 
 <style>
 table.scoresheet {margin: 0 auto; width:80%; font-size:12px; border:1px solid; text-align: center; table-layout: fixed; margin-bottom: 40px;}
@@ -28,8 +25,13 @@ table.scoresheet tr td:not(:last-child) {border-right:1px solid;}
 table.scoresheet tr:nth-child(2) td:nth-child(even) {border-bottom:1px solid;}
 table.scoresheet tr:nth-child(2) td:last-child {border-bottom:1px solid;}
 
-body {
-  background-color:#ffbfb7;
+.btn {
+ font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+ font-weight: 700
+}
+
+.btn-secondary, .btn-warning {
+ color: #fff
 }
 
 @font-face {
@@ -203,14 +205,12 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 						<h3>Score Board</h3>
 						<p>각 프레임의 점수를 입력하거나, 원하는 게임세팅을 선택해주세요.</p>
 						
-						
-						
 							<!-- 점수 입력 툴바 -->
 							<div class="btn-toolbar-pinButtons" role="toolbar" align="center"
-							style="max-width: 50rem;">
-								<button id="btn0" type="button" class="btn-btn-default"
+							style="max-width: 100%;">
+								<button id="btn1" type="button" class="btn-btn-default"
 									data-toggle="tooltip" data-placement="bottom"
-									title="No pins knocked down" onclick="hS(0);" value="0"
+									title="1 pin knocked down" onclick="hS(1);" value="1"
 									style="display: inline;">0</button>
 								<button id="btn1" type="button" class="btn-btn-default"
 									data-toggle="tooltip" data-placement="bottom"
@@ -251,18 +251,17 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 								<button id="btn10" type="button" class="btn-btn-default"
 									data-toggle="tooltip" data-placement="bottom"
 									title="10 pins knocked down" onclick="hS(10);" value="10"
-									style="display: inline;">10</button>
+									style="display: inline;" >10</button>
 								<button id="btn033" type="button"
 									class="btn-btn-default pull-right" data-toggle="tooltip"
 									data-placement="bottom" title="Click to create another game"
-									onclick="m64tew('010C23GF011EO23875755504948');" value="start">Start
+									onclick="m64tew('010C23GF011EO23875755504948');" value="start" 	style="display: inline;">Start
 									Another Game »</button>
 							</div>
-							
+							<br>
 								<div id='scoresheet' style="max-width: 100%;">
-								<table id='scoresheetTable' class='scoresheet' cellpadding='1'
-									cellspacing='0' >
-									<tr>
+								<table id='scoresheetTable' class='scoresheet' cellpadding='1'>
+									<tr >
 										<th colspan='6'>Frame 1</th>
 										<th colspan='6'>Frame 2</th>
 										<th colspan='6'>Frame 3</th>
@@ -275,12 +274,12 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 										<th colspan='6'>Frame 10</th>
 									</tr>
 									<tr>
-										<td colspan='3'>5</td>
 										<td colspan='3'></td>
 										<td colspan='3'></td>
 										<td colspan='3'></td>
 										<td colspan='3'></td>
-										<td colspan='3'>X</td>
+										<td colspan='3'></td>
+										<td colspan='3'></td>
 										<td colspan='3'></td>
 										<td colspan='3'></td>
 										<td colspan='3'></td>
@@ -380,6 +379,8 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 	</div>
 
 	<!-- Scripts -->
+	
+	
 	<script src="./resources/assets/js/jquery.min.js"></script>
 	<script src="./resources/assets/js/jquery.dropotron.min.js"></script>
 	<script src="./resources/assets/js/jquery.scrolly.min.js"></script>
