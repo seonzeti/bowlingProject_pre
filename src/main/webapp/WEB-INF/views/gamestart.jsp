@@ -11,27 +11,61 @@
 
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
-<link rel="stylesheet" href="./resources/assets/css/main.css" type="text/css" />
+<link rel="stylesheet" href="./resources/assets/css/main.css"
+	type="text/css" />
 
-	
-	
+
+
 
 
 
 <style>
-table.scoresheet {margin: 0 auto; width:80%; font-size:12px; border:1px solid; text-align: center; table-layout: fixed; margin-bottom: 40px;}
-table.scoresheet th, tr, td {padding: 0; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-weight: bold;}
-table.scoresheet th {border-bottom:1px solid; background-color: #ffbfb7; height:30px;}
-table.scoresheet th:not(:last-child) {border-right:1px solid;}
-table.scoresheet td {height:30px; background: rgba(255, 255, 255, 0.5);}
-table.scoresheet tr td:not(:last-child) {border-right:1px solid;}
-table.scoresheet tr:nth-child(2) td:nth-child(even) {border-bottom:1px solid;}
-table.scoresheet tr:nth-child(2) td:last-child {border-bottom:1px solid;}
+table.scoresheet {
+	margin: 0 auto;
+	width: 80%;
+	font-size: 12px;
+	border: 1px solid;
+	text-align: center;
+	table-layout: fixed;
+	margin-bottom: 40px;
+}
 
+table.scoresheet th, tr, td {
+	padding: 0;
+	vertical-align: middle;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
 
+table.scoresheet th {
+	border-bottom: 1px solid;
+	background-color: #ffbfb7;
+	height: 30px;
+}
+
+table.scoresheet th:not (:last-child ) {
+	border-right: 1px solid;
+}
+
+table.scoresheet td {
+	height: 30px;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+table.scoresheet tr td:not (:last-child ) {
+	border-right: 1px solid;
+}
+
+table.scoresheet tr:nth-child(2) td:nth-child(even) {
+	border-bottom: 1px solid;
+}
+
+table.scoresheet tr:nth-child(2) td:last-child {
+	border-bottom: 1px solid;
+}
 
 .btn-secondary, .btn-warning {
- color: #fff
+	color: #fff
 }
 
 @font-face {
@@ -196,128 +230,82 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 		<div class="wrapper style1">
 
 			<!-- 요안에 -->
-			
+
 
 
 			<div class="container" align="center">
-				<div class="card bg-secondary mb-3" style="max-width: 60rem;" align="left">
+				<div class="card bg-secondary mb-3" style="max-width: 60rem;"
+					align="left">
 					<div class="card-body">
 						<h3>Score Board</h3>
 						<p>각 프레임의 점수를 입력하거나, 원하는 게임세팅을 선택해주세요.</p>
-						
-							<!-- 점수 입력 툴바 -->
-							<div class="btn-toolbar-pinButtons" role="toolbar" align="center"
+
+
+
+
+
+
+						<!-- 핀버튼-->
+						<div class="btn-toolbar-pinButtons" role="toolbar" align="center"
 							style="max-width: 100%;">
-								<button id="btn1" type="button" class="btn-btn-default"
+							<c:forEach var="i" begin="1" end="10">
+								<input id="btn${i}" type="button" class="btn-btn-default"
+									onclick="roll_go(${i});"
 									data-toggle="tooltip" data-placement="bottom"
-									title="1 pin knocked down" onclick="hS(1);" value="1"
-									style="display: inline;">0</button>
-								<button id="btn1" type="button" class="btn-btn-default"
-									data-toggle="tooltip" data-placement="bottom"
-									title="1 pin knocked down" onclick="hS(1);" value="1"
-									style="display: inline;">1</button>
-								<button id="btn2" type="button" class="btn-btn-default"
-									data-toggle="tooltip" data-placement="bottom"
-									title="2 pins knocked down" onclick="hS(2);" value="2"
-									style="display: inline;">2</button>
-								<button id="btn3" type="button" class="btn-btn-default"
-									data-toggle="tooltip" data-placement="bottom"
-									title="3 pins knocked down" onclick="hS(3);" value="3"
-									style="display: inline;">3</button>
-								<button id="btn4" type="button" class="btn-btn-default"
-									data-toggle="tooltip" data-placement="bottom"
-									title="4 pins knocked down" onclick="hS(4);" value="4"
-									style="display: inline;">4</button>
-								<button id="btn5" type="button" class="btn-btn-default"
-									data-toggle="tooltip" data-placement="bottom"
-									title="5 pins knocked down" onclick="hS(5);" value="5"
-									style="display: inline;">5</button>
-								<button id="btn6" type="button" class="btn-btn-default"
-									data-toggle="tooltip" data-placement="bottom"
-									title="6 pins knocked down" onclick="hS(6);" value="6"
-									style="display: inline;">6</button>
-								<button id="btn7" type="button" class="btn-btn-default"
-									data-toggle="tooltip" data-placement="bottom"
-									title="7 pins knocked down" onclick="hS(7);" value="7"
-									style="display: inline;">7</button>
-								<button id="btn8" type="button" class="btn-btn-default"
-									data-toggle="tooltip" data-placement="bottom"
-									title="8 pins knocked down" onclick="hS(8);" value="8"
-									style="display: inline;">8</button>
-								<button id="btn9" type="button" class="btn-btn-default"
-									data-toggle="tooltip" data-placement="bottom"
-									title="9 pins knocked down" onclick="hS(9);" value="9"
-									style="display: inline;">9</button>
-								<button id="btn10" type="button" class="btn-btn-default"
-									data-toggle="tooltip" data-placement="bottom"
-									title="10 pins knocked down" onclick="hS(10);" value="10"
-									style="display: inline;" >10</button>
-								
-							</div>
-							<br>
-							
-								<!-- Frame 판 -->
-								
-								alert();
-								
-								<div id='scoresheet' style="max-width: 100%;">
+									title="${i} pin knocked down" value="${i}"
+									style="display: inline;"/>
+							</c:forEach>
+
+
+						</div>
+						<br>
+						
+						
+						<!-- j는 플레이어 -->
+						<c:forEach var="j" begin="1" end="2">
+						
+						
+							<!-- Frame 판 -->
+							<div id='scoresheet' style="max-width: 100%;">
 								<table id='scoresheetTable' class='scoresheet' cellpadding='1'>
-									<tr >
-										<th colspan='6'>Frame 1</th>
-										<th colspan='6'>Frame 2</th>
-										<th colspan='6'>Frame 3</th>
-										<th colspan='6'>Frame 4</th>
-										<th colspan='6'>Frame 5</th>
-										<th colspan='6'>Frame 6</th>
-										<th colspan='6'>Frame 7</th>
-										<th colspan='6'>Frame 8</th>
-										<th colspan='6'>Frame 9</th>
-										<th colspan='6'>Frame 10</th>
+									<tr>
+										<!-- frame -->
+										<c:forEach var="i" begin="1" end="10">
+											<th colspan='6'>Frame ${i}</th>
+										</c:forEach>
+
+									</tr>
+
+
+									<tr>
+										<!-- roll입력 -->
+										<c:forEach var="i" begin="1" end="10">
+											<c:if test="${i eq 10 }">
+												<td colspan='2'>1<!-- 10-1 --></td>
+												<td colspan='2'>2<!-- 10-2 --></td>
+												<td colspan='2'>3<!-- 10-3 --></td>
+											</c:if>
+											<c:if test="${i ne 10 }">
+												<td colspan='3'>1<!-- 1-1 -->
+												</td>
+												<td colspan='3'>2<!-- 1-2 --></td>
+											</c:if>
+										</c:forEach>
+
+
 									</tr>
 									<tr>
-										<td colspan='3'> <!-- 1-1 --> </td>
-										<td colspan='3'> <!-- 1-2 --></td>
-										<td colspan='3'> <!-- 2-1 --></td>
-										<td colspan='3'><!-- 2-2 --></td>
-										<td colspan='3'><!-- 3-1 --></td>
-										<td colspan='3'><!-- 3-2 --></td>
-										<td colspan='3'><!-- 4-1 --></td>
-										<td colspan='3'><!-- 4-2 --></td>
-										<td colspan='3'><!-- 5-1 --></td>
-										<td colspan='3'><!-- 5-2 --></td>
-										<td colspan='3'><!-- 6-1 --></td>
-										<td colspan='3'><!-- 6-2 --></td>
-										<td colspan='3'><!-- 7-1 --></td>
-										<td colspan='3'><!-- 7-2 --></td>
-										<td colspan='3'><!-- 8-1 --></td>
-										<td colspan='3'><!-- 8-2 --></td>
-										<td colspan='3'><!-- 9-1 --></td>
-										<td colspan='3'><!-- 9-2 --></td>
-										<td colspan='2'><!-- 10-1 --></td>
-										<td colspan='2'><!-- 10-2 --></td>
-										<td colspan='2'><!-- 10-3 --></td>
-									</tr>
-									<tr>
-										<td colspan='6'><!-- 1 Frame Score -->  </td>
-										<td colspan='6'><!-- 2 Frame Score --></td>
-										<td colspan='6'><!-- 3 Frame Score --></td>
-										<td colspan='6'><!-- 4 Frame Score --></td>
-										<td colspan='6'><!-- 5 Frame Score --></td>
-										<td colspan='6'><!-- 6 Frame Score --></td>
-										<td colspan='6'><!-- 7 Frame Score --></td>
-										<td colspan='6'><!-- 8 Frame Score --></td>
-										<td colspan='6'><!-- 9 Frame Score --></td>
-										<td colspan='6'><!-- 10 Frame Score --></td>
+										<!-- Score입력 -->
+										<c:forEach var="i" begin="1" end="10">
+											<td colspan='6'>${vo.totalScore}</td>
+										</c:forEach>
+
 									</tr>
 								</table>
 							</div>
-							
-							<!-- // Frame 판 -->
-							
 
 
-
-
+						</c:forEach>
 
 
 
@@ -326,9 +314,6 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 					</div>
 
 				</div>
-
-
-				<!--  - -->
 
 
 
@@ -381,15 +366,42 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 
 	<!-- Scripts -->
 	<script>
-		function makeFrame() {
-			
-			
+	function roll_go(num) {
+		alert(num);
+		
+		
+		/* 던져보자구 ㅋㅋ */
+		// 수정할 프레임, 플레이어 번호, 투구번호, 핀 갯수를 보내기 위한 게임 정보 관련 데이터
+		/* var param = { 
+			gseq: ${gvo.gseq}, 
+			pseq: updatePseq, 
+			frame: updateFrame, 
+			turn: updateTurn, 
+			roll: num,
+			remainPin: updateRemainPin,
+			PlayerNum : ${gvo.PlayerNum}
 		}
+		
+		$.ajax({
+			type: "POST",
+			url: "roll",
+			data: { gseq: ${gvo.gseq}, rollNum: num },
+			success: function(map) {
+				setGameInfo("roll", frame, pseq, turn, map, num);
+				alert('성공ㅋㅋ');
+			}, error: function(req, text) {
+				alert(req + " : " + text);
+			}
+		});
+		 */
+		
+	} //roll_go(num)
+
 	</script>
 
-	
-	
-	
+
+
+
 	<script src="./resources/assets/js/jquery.min.js"></script>
 	<script src="./resources/assets/js/jquery.dropotron.min.js"></script>
 	<script src="./resources/assets/js/jquery.scrolly.min.js"></script>

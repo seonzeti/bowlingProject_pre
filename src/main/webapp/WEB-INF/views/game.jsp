@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-
 
 <!DOCTYPE HTML>
 
@@ -251,25 +248,33 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 						<div class="card-body">
 							<h3 align="left">Score Board</h3>
 							<p align="left">플레이어 수를 선택하고 게임 시작 버튼을 눌러주세요. (최대 5인)</p>
-							
-							
 
 
-							<form action="newGame" method="post" id="newGameForm">
+
+
+							<form action="newGame" method="post" id="
+">
 								<div>
 									<select id="PlayerNum" name="PlayerNum" class="form-select"
 										onchange="selectPlayer()">
+										<option selected="selected" value="0" disabled>select!</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
 										<option value="4">4</option>
+										<option value="5">5</option>
 									</select>
-									<div id="inputPlayer"></div>
-								</div>
 
-								<!-- <a onclick="genRandomName();" class="btn btn-dark" style = "width: 100%">Input Player Name</a> -->
-								<a onclick="newGame();" class="btn btn-danger" style="width: 100%">Game Start!</a>
-							</form>
+									<div id="inputPlayer"></div> 
+
+								</div>
+								
+									<a onclick="setName();" class="btn btn-dark" style = "width: 100%">Player Setting</a>								
+									<a onclick="newGame();" href="./gamestart" class="btn btn-danger" style="width: 100%">Game Start!</a>
+						
+								
+								
+									</form>
 
 
 
@@ -335,37 +340,49 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 			
 			
 				//1. selectPlayer() 
-				function selectPlayer() {
+				function selectPlayer() {				
+					var txt;
 					var selectValue = $("#PlayerNum option:selected").val();
-					// 플레이어 명 수 
-					alert(selectValue);
-					for (var i = 1; i <= selectValue; i++) {
-						alert("들어오긴하니");
-					var txt = "<div class='input-group playerInfo'>";
-                		txt += "	<span class='input-group-addon'><i class='fas fa-user'></i></span>";
-                		txt += "	<input type='text' class='form-control playerName' onfocus='this.placeholder=\"\"'>";
-                		txt += "	<span class='input-group-addon'><i class='fas fa-minus-square'></i></span>";
+					
+					if (txt == null){
+						$("#inputPlayer").empty();
+						
+					} 
+					
+					for (var i = 1; i <= selectValue; i++) {					
+						
+						txt = "<div class='input-group playerInfo'>";
+                		txt += "	<input type='text' class='form-control playerName' id='playerName"+i+"' placeholder = 'player"+i+"'>";
               			txt += "</div>";
-					$("#inputPlayer").append(txt);
-				}
+              			
+              			
+						$("#inputPlayer").append(txt);
+
+						}
 					
 					
-				}
+					
+					
+				} // selectPlayer() 끝!!
 				
-				//게임 시작 버튼의 onclick 속성에 걸려있는 이벤트 메소드
-				function newGame() {
-					var PlayerNum = document.getElementById("PlayerNum");
-					var selectValue = PlayerNum.options[PlayerNum.selectedIndex].value;
-					
+		
+
+			//게임 시작 버튼의 onclick 속성에 걸려있는 이벤트 메소드
+			function newGame() {
+				var PlayerNum = document.getElementById("PlayerNum");
+				var selectValue = PlayerNum.options[PlayerNum.selectedIndex].value;
+				$("#newGameForm").submit();
+
+			} //newGame()
+			
+			function setName() {
+				/* 이름지어주자구 */
+			
 				
-					
-					
-					
-				} //newGame()
 				
-				
-				
-			</script>
+			} //setName()
+			
+		</script>
 
 
 
