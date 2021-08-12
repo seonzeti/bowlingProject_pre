@@ -14,7 +14,7 @@ import com.comin.syp.vo.PlayerVO;
 * @return ArrayList<Integer> - 총점 리스트
 */
 
-public class printScoreBoard {
+public class PrintScoreBoard {
 
 	public HashMap<String, Object> scoreBoard(PlayerVO pvo, GameVO gvo) {
 		HashMap<String, Object> map = new HashMap<String, Object>();

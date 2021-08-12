@@ -2,7 +2,7 @@ package com.comin.syp.calculator;
 
 import com.comin.syp.vo.GameVO;
 
-public class Gameinfo {
+public class GameInfo {
 
 	// Gameinfo : 게임이 가진 정보를 저장하는 클래스
 

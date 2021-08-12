@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="player.mapper">
+	<insert id="insert">
+		insert into YP_PLAYER(pseq, gseq, name) 
+		values(#{pseq}, #{gseq}, #{name})
+	</insert>
+	
+	<select id="allList" resultType="com.comin.syp.vo.PlayerVO">
+	 	select * from YP_PLAYER where gseq = #{gseq} order by pseq
+	 </select>
+	 
+	 <select id="playerList" resultType="com.comin.syp.vo.PlayerVO">
+	 	select * from YP_PLAYER where gseq = #{gseq} and pseq = #{pseq}
+	 </select>
+	 
+	<select id="list" resultType="com.comin.syp.vo.PlayerVO">
+	 	select * from YP_PLAYER where gseq = #{gseq} order by pseq
+	 </select>
+	 
+	 <update id="updateRoll">
+		update YP_PLAYER set BALL_${frame}_${turn} = #{roll, jdbcType=NUMERIC}
+		where gseq = #{gseq} and pseq = #{pseq}
+	</update>
+	
+	<update id="reset">
+		update YP_PLAYER 
+		set ball_1_1 = null, ball_1_2 = null
+		, ball_2_1 = null, ball_2_2 = null
+		, ball_3_1 = null, ball_3_2 = null
+		, ball_4_1 = null, ball_4_2 = null
+		, ball_5_1 = null, ball_5_2 = null
+		, ball_6_1 = null, ball_6_2 = null
+		, ball_7_1 = null, ball_7_2 = null
+		, ball_8_1 = null, ball_8_2 = null
+		, ball_9_1 = null, ball_9_2 = null
+		, ball_10_1 = null, ball_10_2 = null, ball_10_3 = null
+		, total_score = null where gseq = #{gseq}
+		<!-- <if test="pseq == 0"> where gseq = #{gseq}</if>
+		<if test="pseq != 0">where gseq = #{gseq} and pseq = #{pseq}</if>  -->
+	</update>
+	
+	<update id="deleteFrame">
+		update YP_PLAYER set ball_${frame}_${turn} = null
+		where gseq = #{gseq} and pseq = #{pseq}
+	</update>
+	
+	<update id="updateTotalScore">
+		update YP_PLAYER set total_score = #{totalScore, jdbcType=NUMERIC}
+		where gseq = #{gseq} and pseq = #{pseq}
+	</update>
+	
+	<select id="rankingList" resultType="com.comin.syp.vo.PlayerVO">
+		select rownum as rank, t.* 
+		from (select p.pseq
+			  , p.gseq
+			  , p.name
+			  , p.total_score
+			  , g.firstplayer
+			  , g.numberofplayer
+			  , g.startdate
+			from YP_PLAYER p, CB_GAME g
+			where p.gseq = g.gseq and p.total_score is not null
+			order by p.total_score desc) t
+	</select>
+</mapper>

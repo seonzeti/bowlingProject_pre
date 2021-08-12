@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sqlmap.gameInfo-mapper">
+	<select id="list" resultType="com.comin.syp.vo.GameVO">
+	 	select * from YP_GAME order by startdate desc
+	 </select>
+	 
+	 <insert id="insert">
+		insert into YP_GAME(firstPlayer, numberOfPlayer) 
+		values(#{firstPlayer}, #{numberOfPlayer})
+		<selectKey keyProperty="gseq" resultType="Integer" order="AFTER"> 
+			SELECT seq_game.currval FROM dual
+		</selectKey>
+	</insert>
+	
+	<update id="update">
+		update YP_GAME set proceeding = #{proceeding},
+		frame = #{frame}, turn = #{turn},
+		remainPin = #{remainPin},
+		pseq = #{pseq}, roll = #{roll}
+		where gseq = #{gseq}
+	</update>
+	
+	<select id="info" resultType="com.comin.syp.vo.GameVO">
+		select * from YP_GAME where gseq = #{gseq}
+	</select>
+	
+	<update id="reset">
+		update YP_GAME set frame = 1, turn = 1, remainpin = 10, 
+		pseq = 1, proceeding = 'Y', roll = null 
+		where gseq = #{gseq}
+	</update>
+
+
+
+</mapper>

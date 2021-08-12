@@ -39,4 +39,9 @@ public class GameServiceImpl implements GameService {
 		return dao.gameReset(gseq);
 	}
 
+	public GameVO game_info(int gseq) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

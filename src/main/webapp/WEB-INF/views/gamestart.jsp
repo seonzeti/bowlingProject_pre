@@ -256,7 +256,10 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 							</div>
 							<br>
 							
-							<!-- Frame 판 -->
+								<!-- Frame 판 -->
+								
+								alert();
+								
 								<div id='scoresheet' style="max-width: 100%;">
 								<table id='scoresheetTable' class='scoresheet' cellpadding='1'>
 									<tr >
@@ -378,6 +381,10 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 
 	<!-- Scripts -->
 	<script>
+		function makeFrame() {
+			
+			
+		}
 	</script>
 
 	
