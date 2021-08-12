@@ -1,5 +1,7 @@
 package com.comin.syp.calculator;
 
+import java.util.ArrayList;
+
 public class Score {
 
 	// prevRollCheck () : 조건에 따라 전 핀을 알아볼 수 있다.
@@ -8,7 +10,7 @@ public class Score {
 	// getTurn() : turn을 설정할 수 있다 > turn, tenTurn을 return
 	// getScore(): 점수 계산하는 메소드
 
-	private int score;
+	int score;
 	// 점수
 
 	// 투구 점수
@@ -223,4 +225,5 @@ public class Score {
 	private boolean isSpare(int firstRollinFrame) {
 		return nextBallsforOften(firstRollinFrame) == 10;
 	}
+
 }

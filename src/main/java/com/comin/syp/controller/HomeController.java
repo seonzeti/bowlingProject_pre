@@ -33,44 +33,13 @@ public class HomeController {
 	Gameinfo game_info = new Gameinfo();
 	GameVO gvo = null;
 	List<PlayerVO> list = null;
-	ArrayList<GameVO> updateGvo = new ArrayList<GameVO>();
-*/
+	ArrayList<GameVO> updateGvo = new ArrayList<GameVO>(); */
+
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 
 
-/*	@RequestMapping(value = "/", method = RequestMethod.GET)	
-	public String main(Model model) {
-		
-		
-		List<GameVO> game_list = null;							//모든 게임 정보 리스트
-		ArrayList<GameVO> gameStatus = new ArrayList<GameVO>();	//진행중인 게임 정보 리스트
-		ArrayList<GameVO> gameover = new ArrayList<GameVO>();	//종료한 게임 정보 리스트
-		
-		try {
-			game_list = gService.gameList();	//DB에 저장된 모든 게임 정보를 조회 
-		} catch (Exception e) {
-			System.out.println("main() DB Connect Error!");
-		}
-		
-		for (GameVO gameVO : game_list) {
-			if(gameVO.isGameStatus() == true) {
-				gameStatus.add(gameVO);	
-				//진행중인 게임 정보를 리스트에 추가
-				
-			} else {
-				gameover.add(gameVO);		//종료한 게임 정보를 리스트에 추가
-			}
-		}
-		
-		model.addAttribute("game", game_list);
-		model.addAttribute("gameStatus", gameStatus);
-		model.addAttribute("gameover", gameover);
-		
-		return "home";		
-		
-		
-	}*/
+
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
@@ -87,7 +56,7 @@ public class HomeController {
 		return "game";
 	}
 	
-	@RequestMapping(value = "/gamestart", method = RequestMethod.POST)
+	@RequestMapping(value = "/gamestart", method = RequestMethod.GET)
 	public String start(Locale locale, Model model, HttpServletRequest request) {
 		logger.info("gamestart", locale);
 		return "gamestart";

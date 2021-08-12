@@ -326,7 +326,22 @@
 
 
 			<script>
-				
+				var userName = "이순신";
+	
+				function ajax() {
+	
+					$.ajax({
+						url : "memberRegi.do",
+						data : "playerNum=" + userName,
+						type : "POST",
+						success : function(data) {
+							alert("성공")
+						},
+						error : function() {
+							alert("에러")
+						}
+					});
+				}
 			</script>
 
 
